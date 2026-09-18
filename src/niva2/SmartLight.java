@@ -1,3 +1,4 @@
+package niva2;
 public class SmartLight {
     int deviceId;
     boolean isOn;
