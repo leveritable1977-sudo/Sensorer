@@ -1,6 +1,6 @@
 # Projekt: Sensorer
 
-Det här projektet innehåller en procedurell och objektorienterad prototyp för ett smart hem-system, uppdelat i två olika svårighetsnivåer.
+Det här projektet innehåller en  objektorienterad prototyp för ett smart hem-system, uppdelat i två olika svårighetsnivåer.
 
 ## Projektstruktur
 
