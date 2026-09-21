@@ -1,18 +1,34 @@
-package niva1; // <--- Ligger i samma mapp, så den har samma paketnamn
+package niva1; // <-- Håller ordning på mappen så att inga filer krockar!
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("--- STARTAR SMART BELYSNING (NIVÅ 1) ---");
 
-        // Java vet automatiskt att den ska använda SmartLight från mappen niva1
-        SmartLight vardagsrumLampa = new SmartLight(101);
-        SmartLight kokslampa = new SmartLight(102);
-        vardagsrumLampa.isOn = true;
-        vardagsrumLampa.brightness = 80;
-        kokslampa.isOn = true;
-        kokslampa.brightness = 40;
+        // 1. DEKLARERA VARIABLER (Helt lösa i main, ingen separat klass)
+        int lightId = 101;
+        boolean isLightOn = false;
+        int brightness = 0;
 
-        System.out.println("[LAMPSTATUS 1] Id: " + vardagsrumLampa.deviceId + " | Tänd: " + vardagsrumLampa.isOn + " | Styrka: " + vardagsrumLampa.brightness + "%");
-        System.out.println("[LAMPSTATUS 2] Id: " + kokslampa.deviceId + " | Tänd: " + kokslampa.isOn + " | Styrka: " + kokslampa.brightness + "%");
+        int doorZone = 5;
+        boolean isOpen = true; // Sätts till true för att testa att dörren öppnas
+
+        // 2. STYRLOGIK: Om dörren är öppen, tänd lampan och sätt styrka till 80
+        if (isOpen) {
+            isLightOn = true;
+            brightness = 80;
+
+            // Skriv ut larm och lampstatus på skärmen
+            System.out.println("[LARM] Dörren i zon " + doorZone + " har öppnats!");
+            System.out.println("[STATUS] Lampan med ID " + lightId + " är nu tänd.");
+        }
+
+        // 3. VALIDERA LJUSSTYRKA (Kontrollera att värdet är mellan 0 och 100)
+        if (brightness >= 0 && brightness <= 100) {
+            System.out.println("[INFO] Ljusstyrkan är giltig: " + brightness + "%");
+        } else {
+            System.out.println("[FEL] Ogiltig ljusstyrka upptäckt!");
+        }
+
+        System.out.println("--- PROTOTYP NIVÅ 1 KLAR ---");
     }
 }
