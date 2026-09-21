@@ -1,4 +1,4 @@
-package niva2; // <--- Den här dörren hör också till niva2
+package niva2;
 
 public class DoorSensor {
     int sensorId;
