@@ -20,10 +20,11 @@ Sensorer/
 
 ## Beskrivning av nivåerna
 * **src/niva1/**: Innehåller en helt procedurell prototyp (`Main.java`). Alla variabler och all styrlogik för lampan och dörren ligger direkt i main-metoden utan några extra klasser eller objekt.
-* **src/niva2/**: Bygger ut systemet till att bli helt objektorienterat. Här samarbetar tre olika klasser (`Main.java`, `SmartLight.java`, `DoorSensor.java`) med hjälp av inkapsling, konstruktorer, getters/setters och en toggle-metod.
+* **src/niva2/**: Bygger ut systemet till att bli objektorienterat. Här delas systemet upp i egna klasser (`SmartLight.java` och `DoorSensor.java`) som skapar fristående objekt i minnet med tillhörande instansmetoder.
 
 ## Tekniker som används
-* **Procedurell kod**: Variabler och if-satser som körs i en rak lista i main (Nivå 1).
-* **Inkapsling (Encapsulation)**: Variabler skyddade med `private` som nås säkert utifrån via getters och setters (Nivå 2).
-* **Konstruktorer & Metoder**: Sparar data smidigt i minnet med hjälp av `this` och styr enheter med smarta metoder som `toggle()`.
-  
+* **Procedurell kod**: Variabler och if-satser som körs i en rak lista direkt i main (Nivå 1).
+* **Klasser och Objekt (OOP)**: Variabler och egenskaper är samlade inuti logiska modeller som representerar hårdvaran (Nivå 2).
+* **Konstruktorer & Instansmetoder**: Initierar objekt med startvärden via `this` och styr enheternas beteende inifrån klassen med smarta metoder som `toggle()`.
+* **Dimmerloop & Validering**: Använder for-loopar för att stega värden och if-else-satser för att kontrollera och avvisa ogiltig indata (Nivå 2).
+    
